@@ -1,5 +1,5 @@
 import React from 'react';
-import close from '@/assets/close.svg';
+import close from './../../assets/close.svg';
 import { ToastProps } from '@/interfaces';
 import { TextColors } from '@/constants';
 import {

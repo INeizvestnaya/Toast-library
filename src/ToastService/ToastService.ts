@@ -1,8 +1,8 @@
 import { v4 as uuid } from 'uuid';
-import successIcon from '@/assets/success.svg';
-import infoIcon from '@/assets/info.svg';
-import warningIcon from '@/assets/warning.svg';
-import errorIcon from '@/assets/error.svg';
+import successIcon from './../assets/success.svg';
+import infoIcon from './../assets/info.svg';
+import warningIcon from './../assets/warning.svg';
+import errorIcon from './../assets/error.svg';
 import { ToastVariants, TextColors } from '@/constants';
 import { InitialToastProps, ToastProps } from '@/interfaces';
 
