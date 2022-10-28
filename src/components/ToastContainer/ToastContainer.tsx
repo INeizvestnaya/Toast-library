@@ -27,7 +27,7 @@ function ToastContainer({
   }, [toasts]);
 
   useEffect(() => {
-    if (deleteTime !== undefined && toastList.length) {
+    if (deleteTime && deleteTime !== undefined && toastList.length) {
       const intervalId = setInterval(() => {
         deleteToastById(toastList[0].id);
       }, deleteTime * 1000);
