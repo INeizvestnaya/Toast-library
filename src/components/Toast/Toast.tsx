@@ -1,7 +1,7 @@
 import React from 'react';
-import close from './../../assets/close.svg';
+import close from './../../assets/close.png';
 import { ToastProps } from '@/interfaces';
-import { TextColors } from '@/constants';
+import { TextColors } from '../../constants';
 import {
   StyledToast,
   CloseIcon,

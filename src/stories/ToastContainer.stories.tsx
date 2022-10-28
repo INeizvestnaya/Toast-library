@@ -4,7 +4,7 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 import ToastContainer from '@/components/ToastContainer';
 import { ToastContainerProps } from '@/interfaces';
 import { AnimationTypes, PositionTypes, Spaces } from '@/constants';
-import toastService from '@/ToastService';
+import createToast from '@/utils/createToast';
 
 export default {
   title: 'ToastContainer',
@@ -54,41 +54,14 @@ export default {
 } as ComponentMeta<typeof ToastContainer>;
 
 const Template: ComponentStory<typeof ToastContainer> = (
-  args: ToastContainerProps,
+  args: ToastContainerProps
 ) => <ToastContainer {...args} />;
 
-toastService.generateToast({ label: 'error toast', variant: 'error' });
+createToast({ label: 'error toast', variant: 'error' });
+createToast({ label: 'warning toast', variant: 'warning' });
+const toasts = createToast({ label: 'success toast' });
 
 export const ExampleToast = Template.bind({});
 ExampleToast.args = {
-  toasts: toastService.generateToast({ label: 'success toast' }),
-  deleteToast: toastService.deleteToast,
+  ...toasts,
 };
-
-/* variant: {
-      name: "variant",
-      type: { name: "string", required: false },
-      defaultValue: ToastVariants.info,
-      description: "Variant of the toast",
-      options: Object.values(ToastVariants),
-      control: {
-        type: "inline-radio",
-      },
-    },
-    label: {
-      name: "label",
-      type: { name: "string", required: true },
-      defaultValue: "Notification!",
-      description: "LAbel to the toast",
-      control: {
-        type: "text",
-      },
-    },
-    color: {
-      name: "color",
-      type: { name: "string", required: false },
-      description: "Optional prop, color of the toast background",
-      control: {
-        type: "color",
-      },
-    }, */

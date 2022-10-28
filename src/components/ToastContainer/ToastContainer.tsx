@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { ThemeProvider } from 'styled-components';
-import theme from '@/theme';
+import theme from '../../theme';
 import { ToastContainerProps, ToastProps } from '@/interfaces';
-import Toast from '@/components/Toast';
-import Portal from '@/components/Portal';
-import ErrorBoundary from '@/components/ErrorBoundary';
+import Toast from '../Toast';
+import Portal from '../Portal';
+import ErrorBoundary from '../ErrorBoundary';
 import { ToastsWrapper } from './styled';
-import { PositionTypes, Spaces } from '@/constants';
+import { PositionTypes, Spaces } from '../../constants';
 
 function ToastContainer({
   toasts,

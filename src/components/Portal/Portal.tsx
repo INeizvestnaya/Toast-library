@@ -6,9 +6,12 @@ interface PortalProps {
 }
 
 const Portal = ({ children }: PortalProps) => {
-  const toastPortal = document.createElement('div');
-  toastPortal.id = 'toasts-container';
-  document.body.prepend(toastPortal);
+  let toastPortal = document.getElementById('toasts-container');
+  if (!toastPortal) {
+    toastPortal = document.createElement('div');
+    toastPortal.id = 'toasts-container';
+    document.body.prepend(toastPortal);
+  }
 
   return createPortal(children, toastPortal);
 };

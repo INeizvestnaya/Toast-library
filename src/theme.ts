@@ -19,7 +19,7 @@ const theme: DefaultTheme = {
   paddings: {
     s: 5,
     m: 7,
-    l: 10
+    l: 10,
   },
 };
 

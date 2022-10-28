@@ -113,16 +113,16 @@ export const ToastLabel = styled.div<ToastLabelProps>`
 
 export const CloseIcon = styled.img<IconsProps>`
   @media (max-width: 500px) {
-    width: ${({ theme }) => theme.iconSizes.s / 1.25}px;
-    height: ${({ theme }) => theme.iconSizes.s / 1.25}px;
+    width: ${({ theme }) => theme.iconSizes.s / 1.5}px;
+    height: ${({ theme }) => theme.iconSizes.s / 1.5}px;
   }
   @media (max-width: 1000px) {
-    width: ${({ theme }) => theme.iconSizes.m / 1.25}px;
-    height: ${({ theme }) => theme.iconSizes.m / 1.25}px;
+    width: ${({ theme }) => theme.iconSizes.m / 1.5}px;
+    height: ${({ theme }) => theme.iconSizes.m / 1.5}px;
   }
   @media (min-width: 1001px) {
-    width: ${({ theme }) => theme.iconSizes.l / 1.25}px;
-    height: ${({ theme }) => theme.iconSizes.l / 1.25}px;
+    width: ${({ theme }) => theme.iconSizes.l / 1.5}px;
+    height: ${({ theme }) => theme.iconSizes.l / 1.5}px;
   }
   ${({ isIconWhite }) => isIconWhite && 'filter: invert(100%)'}
 `;

@@ -1,8 +1,4 @@
-import ToastContainer from '@/components/ToastContainer';
-import toastService from './ToastService';
+import ToastContainer from './components/ToastContainer';
+import createToast from './utils/createToast';
 
-export { ToastContainer, toastService };
-
-/*import Example from './Example';
-
-export { Example };*/
+export { ToastContainer, createToast };

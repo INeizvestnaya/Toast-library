@@ -1,10 +1,10 @@
 import { v4 as uuid } from 'uuid';
-import successIcon from './../assets/success.svg';
-import infoIcon from './../assets/info.svg';
-import warningIcon from './../assets/warning.svg';
-import errorIcon from './../assets/error.svg';
-import { ToastVariants, TextColors } from '@/constants';
-import { InitialToastProps, ToastProps } from '@/interfaces';
+import successIcon from '../assets/success.png';
+import infoIcon from '../assets/info.png';
+import warningIcon from '../assets/warning.png';
+import errorIcon from '../assets/error.png';
+import { ToastVariants, TextColors } from '../constants';
+import { InitialToastProps, ToastProps } from '../interfaces';
 
 class ToastService {
   private toasts: ToastProps[] = [];
@@ -21,7 +21,7 @@ class ToastService {
   private static toastService: ToastService;
 
   addToast = (toast: ToastProps) => {
-    if (this.toasts.length < 3) {
+    if (this.toasts.length < 3 && !this.toasts.find((t) => t.id === toast.id)) {
       this.toasts = [...this.toasts, toast];
     }
   };

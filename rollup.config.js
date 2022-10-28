@@ -1,11 +1,11 @@
 import { babel } from '@rollup/plugin-babel';
-import external from 'rollup-plugin-peer-deps-external';
 import resolve from '@rollup/plugin-node-resolve';
-import typescript from '@rollup/plugin-typescript';
 import { terser } from 'rollup-plugin-terser';
 import commonjs from '@rollup/plugin-commonjs';
-import svg from 'rollup-plugin-svg';
+import image from '@rollup/plugin-image';
 import alias from '@rollup/plugin-alias';
+import peerDepsExternal from 'rollup-plugin-peer-deps-external';
+import sucrase from '@rollup/plugin-sucrase';
 
 export default [
   {
@@ -14,18 +14,17 @@ export default [
       {
         file: 'dist/index.js',
         format: 'cjs',
-        sourcemap: true,
       },
       {
         file: 'dist/index.es.js',
-        format: 'esm',
+        format: 'es',
         exports: 'named',
-        sourcemap: true,
       },
     ],
     plugins: [
+      peerDepsExternal(),
       alias({
-        resolve: ['.js', '.ts', 'tsx', 'jsx'],
+        resolve: ['.js', '.ts', '.tsx', '.jsx'],
         entries: [
           {
             find: '@/*',
@@ -33,18 +32,19 @@ export default [
           },
         ],
       }),
-      svg(),
+      resolve({ extensions: ['.ts', '.tsx'], browser: true }),
       babel({
         exclude: 'node_modules/**',
         presets: ['@babel/preset-react'],
       }),
-      external(),
       resolve(),
-      typescript({
-        compilerOptions: { outDir: './lib', declarationDir: './lib' },
-      }),
       commonjs(),
       terser(),
+      sucrase({
+        exclude: ['node_modules/**'],
+        transforms: ['typescript', 'jsx'],
+      }),
+      image(),
     ],
   },
 ];
