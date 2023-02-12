@@ -1,5 +1,9 @@
 # Toast library
 
+## Available at npm
+
+https://www.npmjs.com/package/ilona-toast-lib
+
 ## Toast props
 - label
 - variant: success (default), error, warning, info
